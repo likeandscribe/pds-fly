@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for pds-frontpage on 2024-11-14T22:57:57Z
+# fly.toml app configuration file generated for pds-frontpage on 2025-10-05T21:33:46+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -15,9 +15,18 @@ PDS_BSKY_APP_VIEW_URL = 'https://api.bsky.app'
 PDS_CRAWLERS = 'https://bsky.network'
 PDS_DATA_DIRECTORY = '/pds'
 PDS_DID_PLC_URL = 'https://plc.directory'
-PDS_HOSTNAME = 'frontpds.fyi'
+PDS_HOSTNAME = 'pds.unravel.fyi'
 PDS_REPORT_SERVICE_DID = 'did:plc:ar7c4by46qjdydhdevvrndac'
 PDS_REPORT_SERVICE_URL = 'https://mod.bsky.app'
+# If you want to store blobs to disk, uncocomment the following lines and remove the S3-related lines
+# PDS_BLOBSTORE_DISK_LOCATION = "/pds/blocks"
+PDS_BLOBSTORE_S3_BUCKET = 'pds-blobs'
+PDS_BLOB_UPLOAD_LIMIT = "52428800"
+PDS_EMAIL_FROM_ADDRESS = "noreply@pds.unravel.fyi"
+
+[[mounts]]
+source = 'pds_data'
+destination = '/pds'
 
 [http_service]
 internal_port = 3000
@@ -28,10 +37,6 @@ min_machines_running = 0
 processes = ['app']
 
 [[vm]]
-memory = '1gb'
+memory = '512mb'
 cpu_kind = 'shared'
 cpus = 1
-
-[[mounts]]
-source = 'pds_data'
-destination = '/pds'
