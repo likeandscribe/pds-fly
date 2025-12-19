@@ -1,12 +1,10 @@
 "use strict";
-const {
-  PDS,
-  envToCfg,
-  envToSecrets,
-  readEnv,
-  httpLogger,
-} = require("@atproto/pds");
-const pkg = require("@atproto/pds/package.json");
+import { PDS, envToCfg, envToSecrets, readEnv, httpLogger } from "@atproto/pds";
+import pkg from "@atproto/pds/package.json" with { type: "json" };
+import type {
+  Request as ExpressRequest,
+  Response as ExpressResponse,
+} from "express";
 
 const main = async () => {
   const env = readEnv();
@@ -28,9 +26,9 @@ const main = async () => {
 };
 
 async function checkHandleRoute(
-  /** @type {PDS} */ pds,
-  /** @type {import('express').Request} */ req,
-  /** @type {import('express').Response} */ res
+  pds: PDS,
+  req: ExpressRequest,
+  res: ExpressResponse
 ) {
   try {
     const { domain } = req.query;

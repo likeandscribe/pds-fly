@@ -24,7 +24,7 @@ ENV NODE_ENV=production
 # potential perf issues w/ io_uring on this version of node
 ENV UV_USE_IO_URING=0
 
-CMD ["node", "--enable-source-maps", "index.js"]
+CMD ["node", "--enable-source-maps", "src/index.ts"]
 
 LABEL org.opencontainers.image.source=https://github.com/likeandscribe/pds-fly
 LABEL org.opencontainers.image.description="AT Protocol PDS"

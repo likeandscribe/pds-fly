@@ -1,6 +1,13 @@
 {
   "private": true,
+  "type": "module",
   "dependencies": {
     "@atproto/pds": "^0.4.199"
+  },
+  "devDependencies": {
+    "@types/express": "4.17.17",
+    "@types/node": "^25.0.3",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3"
   }
 }
