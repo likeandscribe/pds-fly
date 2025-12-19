@@ -1,6 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "@atproto/pds": "^0.4.183"
+    "@atproto/pds": "^0.4.199"
   }
 }
