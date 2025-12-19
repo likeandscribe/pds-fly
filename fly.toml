@@ -18,6 +18,8 @@ PDS_DID_PLC_URL = 'https://plc.directory'
 PDS_HOSTNAME = 'pds.unravel.fyi'
 PDS_REPORT_SERVICE_DID = 'did:plc:ar7c4by46qjdydhdevvrndac'
 PDS_REPORT_SERVICE_URL = 'https://mod.bsky.app'
+PDS_MOD_SERVICE_DID = "did:plc:ar7c4by46qjdydhdevvrndac"
+PDS_MOD_SERVICE_URL = "https://mod.bsky.app"
 
 PDS_BLOB_UPLOAD_LIMIT = "52428800"
 # If you want to store blobs to disk, uncocomment the following lines and remove the S3-related lines
