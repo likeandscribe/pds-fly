@@ -11,6 +11,7 @@ RUN pnpm install --production --frozen-lockfile > /dev/null
 FROM node:22.20.0-alpine3.22
 
 RUN apk add --update dumb-init
+RUN apk add sqlite
 
 # Avoid zombie processes, handle signal forwarding
 ENTRYPOINT ["dumb-init", "--"]
